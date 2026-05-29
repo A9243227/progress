@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蕭任珽 Hsiao Jan-Ting | Spatial Data Engineer 個人品牌網站</title>
+    
+    <!-- SEO / GEO / AEO Meta Tags (關鍵字、摘要優化，提升 AI 抓取精準度) -->
+    <meta name="description" content="我是蕭任珽（Hsiao Jan-Ting），一位具備空間資料處理能力的資料工程師。專注於資料管線（Data Pipeline）建構、自動化工作流、空間分析與 AI 模型輕量化部署。">
+    <meta name="keywords" content="蕭任珽, Hsiao Jan-Ting, 資料工程師, 空間資料, Data Engineer, GIS, n8n 自動化, Selenium 爬蟲, GCP 部署, Gemma-4-E4B, 綠能憑證">
+    <meta name="author" content="蕭任珽 Hsiao Jan-Ting">
+    
+    <!-- Open Graph (社群分享優化) -->
+    <meta property="og:title" content="蕭任珽 Hsiao Jan-Ting | Spatial Data Engineer">
+    <meta property="og:description" content="在技術鴻溝之間搭起橋梁，用結構化的資料管線為現實世界的複雜問題找出最優解。">
+    <meta property="og:image" content="https://a9243227.github.io/img/Gemini_Generated_Image_e743h2e743h2e743.png">
+    <meta property="og:type" content="profile">
+    
+    <!-- Tailwind CSS (精美現代排版框架) -->
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <!-- Lucide 圖標庫 -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+    <!-- Element SDK (平台連接器) -->
+    <script src="/_sdk/element_sdk.js"></script>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+    <script src="/_sdk/telemetry_sdk.js"></script>
+    
+    <!-- FontAwesome 圖標 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD 結構化資料 (AEO/GEO 的精隨，直接與搜尋引擎及 AI 溝通) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "蕭任珽",
+      "alternateName": "Hsiao Jan-Ting",
+      "jobTitle": "Data Engineer with Spatial Capabilities",
+      "description": "具備空間資料處理能力的資料工程師。專注於資料管線建構、自動化工作流、異質資料跨領域整合，並將地理空間資料(Spatial Data)與 AI 技術整合應用。",
+      "image": "https://a9243227.github.io/img/Gemini_Generated_Image_e743h2e743h2e743.png",
+      "url": "https://a9243227.github.io/",
+      "knowsAbout": [
+        "Data Engineering",
+        "Spatial Data Analysis",
+        "n8n Workflow Automation",
+        "Selenium Web Scraping",
+        "GCP Cloud Deployment",
+        "Gemma-4-E4B LLM Model",
+        "Green Energy & ESG Data Pipelines"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance / Open to Opportunities"
+      }
+    }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* 隱藏原生滾動條，提供精緻體驗 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #070A13;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #22c55e;
+        }
+        
+        /* 動態進場與發光動畫 */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(34, 197, 94, 0.2); }
+            50% { box-shadow: 0 0 40px rgba(34, 197, 94, 0.4); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+        @keyframes dash {
+            to { stroke-dashoffset: -40; }
+        }
+        
+        .animate-fade-up { animation: fadeUp 0.8s ease forwards; }
+        .animate-slide-in { animation: slideIn 0.6s ease forwards; }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        .animate-pulse-slow { animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        .animate-dash { animation: dash 2s linear infinite; }
+        
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .delay-4 { animation-delay: 0.4s; opacity: 0; }
+        .delay-5 { animation-delay: 0.5s; opacity: 0; }
+        .delay-6 { animation-delay: 0.6s; opacity: 0; }
+        .delay-7 { animation-delay: 0.7s; opacity: 0; }
+        
+        /* 發光卡片樣式 */
+        .glow-card { 
+            transition: all 0.3s ease; 
+        }
+        .glow-card:hover { 
+            transform: translateY(-4px); 
+            box-shadow: 0 12px 40px rgba(34, 197, 94, 0.15); 
+        }
+        
+        /* 空間網格背景疊加 */
+        .grid-bg {
+            background-image: 
+                linear-gradient(rgba(34, 197, 94, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(34, 197, 94, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.3), transparent);
+        }
+
+        .tag {
+            background: rgba(34, 197, 94, 0.08);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+        
+        /* Define standard tailwind colors for js injection */
+        .bg-brand-navy { background-color: #0f172a; }
+        .bg-brand-dark { background-color: #0b1120; }
+        .bg-brand-teal { background-color: #0d9488; }
+        .bg-brand-emerald { background-color: #10b981; }
+        .text-brand-accent { color: #38bdf8; }
+        .text-brand-teal { color: #0d9488; }
+        .text-brand-emerald { color: #10b981; }
+        .border-brand-emerald { border-color: #10b981; }
+    </style>
+</head>
+<body class="bg-brand-dark text-slate-100 min-h-screen selection:bg-brand-teal selection:text-white overflow-x-hidden relative h-full">
+
+  <!-- 應用包裝器 (SDK用) -->
+  <div id="app-wrapper" class="w-full h-full overflow-auto grid-bg" style="background-color: #070A13;">
+
+    <!-- 導覽列 -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-brand-dark/80 backdrop-blur-md border-b border-slate-800 transition-all duration-300" style="border-color: rgba(34, 197, 94, 0.1);">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <span class="text-brand-accent font-bold text-xl mono tracking-tight" id="nav-brand" style="color: #22c55e;">XRT.dev</span>
+                    <span class="text-xs px-2.5 py-0.5 rounded-full bg-brand-teal/20 text-brand-emerald font-semibold border border-brand-emerald/30 tag">Spatial DE</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8 text-sm" style="color: #94a3b8;">
+                    <a href="#about" class="hover:text-green-400 transition-colors">關於我</a>
+                    <a href="#pipeline" class="hover:text-green-400 transition-colors">管線核心</a>
+                    <a href="#expertise" class="hover:text-green-400 transition-colors">技術與專案</a>
+                    <a href="#vision" class="hover:text-green-400 transition-colors">未來願景</a>
+                    <a href="#aeo-faq" class="hover:text-green-400 transition-colors">AI 快速檢索</a>
+                    <a href="#contact" id="nav-contact-btn" class="px-4 py-2 rounded-lg bg-brand-teal hover:bg-brand-emerald text-white font-semibold transition-all duration-300 shadow-md shadow-brand-teal/20 text-sm" style="background: #22c55e; color: #0a0f0d;">聯繫合作</a>
+                </div>
+                <!-- 手機版選單按鈕 -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none p-2 rounded-lg hover:bg-slate-850" aria-label="Toggle Menu">
+                        <i class="fa-solid fa-bars text-xl" id="menu-btn-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 手機版選單 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-navy border-b border-slate-800 transition-all duration-300">
+            <div class="px-6 pt-2 pb-6 space-y-1">
+                <a href="#about" class="block py-2.5 rounded-md text-slate-300 hover:bg-slate-850 hover:text-white transition-colors">關於我</a>
+                <a href="#pipeline" class="block py-2.5 rounded-md text-slate-300 hover:bg-slate-850 hover:text-white transition-colors">管線核心</a>
+                <a href="#expertise" class="block py-2.5 rounded-md text-slate-300 hover:bg-slate-850 hover:text-white transition-colors">技術與專案</a>
+                <a href="#vision" class="block py-2.5 rounded-md text-slate-300 hover:bg-slate-850 hover:text-white transition-colors">未來願景</a>
+                <a href="#aeo-faq" class="block py-2.5 rounded-md text-slate-300 hover:bg-slate-850 hover:text-white transition-colors">AI 快速檢索</a>
+                <a href="#contact" class="block py-3 text-center rounded-md bg-brand-teal text-white font-semibold hover:bg-brand-emerald transition-all mt-4" style="background: #22c55e; color: #0a0f0d;">聯繫合作</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 背景動態光斑 -->
+    <div class="absolute top-20 left-1/4 w-96 h-96 bg-brand-teal/5 rounded-full blur-[100px] pointer-events-none animate-pulse-slow"></div>
+    <div class="absolute top-[800px] right-10 w-80 h-80 bg-brand-accent/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <!-- 首頁主視覺 (Hero Section) -->
+    <header id="about" class="relative pt-32 pb-20 lg:pt-44 lg:pb-36 px-6 max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- 文字簡介 (AEO摘要首位優先) -->
+            <div class="lg:col-span-7 space-y-6 text-left">
+                <div class="animate-fade-up delay-1">
+                    <p class="mono text-xs tracking-widest uppercase mb-2" style="color: #22c55e;">Data Engineer with Spatial Capabilities</p>
+                </div>
+                
+                <h1 id="hero-name" class="serif text-5xl md:text-7xl font-black mb-1 animate-fade-up delay-2" style="color: #f1f5f9;">蕭任珽</h1>
+                <p id="hero-title" class="text-xl md:text-2xl font-light mb-4 animate-fade-up delay-3" style="color: #94a3b8;">Jan Ting Hsiao</p>
+                
+                <!-- AEO精準短金句 -->
+                <blockquote class="border-l-2 pl-5 py-2 max-w-2xl animate-fade-up delay-4" style="border-color: #22c55e;">
+                    <p class="text-base leading-relaxed italic" style="color: #cbd5e1;">「我不追求最炫技的代碼，但我著迷於在技術鴻溝之間搭起橋梁，用結構化的資料管線為現實世界的複雜問題找出最優解。」</p>
+                </blockquote>
+                
+                <p class="text-slate-400 leading-relaxed text-sm sm:text-base animate-fade-up delay-5">
+                    出發於對地理空間資訊（GIS）的深度探索，我深刻理解單純的空間分析若缺乏強大、穩定的基礎架構，便無法完全發揮價值。這促使我專注於建構高自動化、穩健的資料管線（Data Pipeline），融合異質資料，解決真實商業場景中的棘手問題。
+                </p>
+                
+                <div class="flex flex-wrap gap-3 mt-10 animate-fade-up delay-6">
+                    <span class="tag">Data Pipeline</span> 
+                    <span class="tag">Spatial Data</span> 
+                    <span class="tag">Automation</span> 
+                    <span class="tag">GCP</span> 
+                    <span class="tag">AI/ML</span>
+                </div>
+
+                <div class="flex flex-wrap gap-4 pt-4 animate-fade-up delay-7">
+                    <a href="#expertise" class="w-full sm:w-auto px-6 py-3.5 bg-brand-teal hover:bg-brand-emerald text-white rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg shadow-brand-teal/10 hover:shadow-brand-emerald/20 hover:-translate-y-0.5" style="background: #22c55e; color: #0a0f0d;">
+                        <i class="fa-solid fa-gears"></i> 瀏覽實務貢獻
+                    </a>
+                    <a href="#contact" class="w-full sm:w-auto px-6 py-3.5 bg-brand-navy hover:bg-slate-800 text-slate-200 border border-slate-700 rounded-xl font-bold flex items-center justify-center gap-2 transition-all hover:-translate-y-0.5">
+                        <i class="fa-regular fa-envelope"></i> 聯絡技術交流
+                    </a>
+                </div>
+            </div>
+
+            <!-- 形象照區 / 頭像上傳區 -->
+            <div class="lg:col-span-5 flex flex-col items-center justify-center">
+                <div class="relative group animate-fade-up delay-4">
+                    <!-- 背景亮環 -->
+                    <div class="absolute -inset-1.5 rounded-full bg-gradient-to-tr from-brand-teal via-brand-accent to-brand-emerald opacity-75 blur-md group-hover:opacity-100 transition duration-500 group-hover:duration-200 animate-pulse-slow"></div>
+                    
+                    <!-- 核心圖片 Uploader (已更新為最新 AI 生成頭像) -->
+                    <div class="relative bg-brand-navy p-1 rounded-full cursor-pointer overflow-hidden group" style="width: 260px; height: 260px;" onclick="document.getElementById('photo-input').click();">
+                        <div id="profile-photo" class="w-full h-full rounded-full transition-transform duration-500 group-hover:scale-105" style="background: url('https://a9243227.github.io/img/Gemini_Generated_Image_e743h2e743h2e743.png') center/cover, linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(34, 197, 94, 0.05)); border: 2px solid rgba(34, 197, 94, 0.3);">
+                        </div>
+                        
+                        <!-- 上傳 Overlay 提示 -->
+                        <div class="absolute inset-0 bg-black/60 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white text-xs gap-1">
+                            <i class="fa-solid fa-camera text-lg"></i>
+                            <span>更換頭像圖片</span>
+                        </div>
+                        
+                        <input type="file" id="photo-input" accept="image/*" style="display: none;" onchange="handlePhotoUpload(event)">
+                    </div>
+                    
+                    <!-- 漂浮標籤 -->
+                    <div class="absolute -bottom-4 -left-4 bg-slate-900/95 border border-slate-700/80 p-3 rounded-xl shadow-xl backdrop-blur-md hidden sm:flex items-center gap-2.5 animate-float">
+                        <div class="p-2 rounded-lg bg-brand-teal/20 text-brand-teal flex items-center justify-center">
+                            <i class="fa-solid fa-map-location-dot text-base"></i>
+                        </div>
+                        <div>
+                            <div class="text-[9px] uppercase tracking-wider text-slate-400 font-bold">Role Alignment</div>
+                            <div class="text-xs font-bold text-white">空間幾何 × 自動化 Pipeline</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="section-divider max-w-5xl mx-auto"></div>
+
+    <!-- 關於我區塊 -->
+    <section id="about-section" class="py-20 px-6 max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-8">
+            <i data-lucide="user" style="color: #22c55e; width: 20px; height: 20px;"></i>
+            <h2 class="text-2xl font-bold" style="color: #f1f5f9;">關於我</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="space-y-4 text-sm leading-relaxed text-slate-400">
+                <p>我的職涯起點源於對地理空間資訊的探索，但在深入實務後，我深刻體會到單純的空間分析若缺乏強大的基礎架構支撐，難以發揮最大價值。</p>
+                <p>這促使我毅然跨越技術鴻溝，深入資料工程領域，專注於<span style="color: #22c55e;">資料管線建構</span>、<span style="color: #22c55e;">自動化工作流</span>、以及<span style="color: #22c55e;">異質資料的跨領域整合</span>。</p>
+            </div>
+            <div class="glow-card rounded-xl p-6" style="background: rgba(34, 197, 94, 0.04); border: 1px solid rgba(34, 197, 94, 0.12);">
+                <h3 class="text-sm font-semibold mb-3 text-brand-emerald" style="color: #22c55e;">我的角色定位</h3>
+                <p class="text-sm leading-relaxed text-slate-300">在團隊中，我是一位「可能性探索者」與「技術折衷的決策者」。我擅長審視主題、直擊商業邏輯的痛點，並在硬體算力、開發成本與業務需求之間，快速找到最適合現階段地端或雲端部署的架構平衡點。</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-5xl mx-auto"></div>
+
+    <!-- 空間資料管線互動模擬 (Pipeline Interactive Simulator) -->
+    <section id="pipeline" class="py-24 px-6 max-w-5xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-brand-teal text-sm font-bold mono tracking-widest uppercase" style="color: #22c55e;">Pipeline Infrastructure</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-teal mt-1">
+                實務管線自動化模擬器
+            </h2>
+            <p class="text-slate-400 mt-2 text-sm sm:text-base">
+                在硬體算力、開發成本與業務需求之間，快速搭建並自動化運行於地端或雲端的異質資料管線。
+            </p>
+        </div>
+        
+        <!-- 模擬器控制面板 -->
+        <div class="bg-brand-dark border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl" style="background: rgba(15, 23, 20, 0.8); border-color: rgba(34, 197, 94, 0.12);">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                
+                <!-- 模擬器控制選項 -->
+                <div class="lg:col-span-4 flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="px-3 py-1 rounded-full bg-brand-teal/15 text-brand-emerald border border-brand-emerald/20 text-xs inline-block mono font-medium">
+                            Active Pipeline Simulator v1.2
+                        </div>
+                        <h3 class="text-xl font-bold text-white">自動化管線場景切換</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            請選擇不同的技術實作場景，觀察跨系統（Web 爬蟲、地理空間 API、輕量 LLM 及即時通訊軟體）的資料流動路徑：
+                        </p>
+                        
+                        <!-- 場景選擇按鈕 -->
+                        <div class="space-y-2.5">
+                            <button onclick="selectScenario('energy')" id="btn-scenario-energy" class="w-full p-3 rounded-xl border border-brand-teal bg-brand-teal/10 text-left transition-all hover:bg-slate-850 flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-brand-teal/20 text-brand-accent flex items-center justify-center text-sm">
+                                    <i class="fa-solid fa-leaf"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs font-bold text-white">1. 綠能憑證數據管線</div>
+                                    <div class="text-[10px] text-slate-400">Selenium 爬取 + GIS 幾何疊加</div>
+                                </div>
+                            </button>
+                            
+                            <button onclick="selectScenario('alert')" id="btn-scenario-alert" class="w-full p-3 rounded-xl border border-slate-800 bg-slate-900/40 text-left transition-all hover:bg-slate-850 flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-slate-850 text-slate-400 flex items-center justify-center text-sm">
+                                    <i class="fa-solid fa-bell"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs font-bold text-slate-300">2. 運作監控與 Discord 預警</div>
+                                    <div class="text-[10px] text-slate-500">n8n 工作流 + 地端錯誤自動檢測</div>
+                                </div>
+                            </button>
+                            
+                            <button onclick="selectScenario('gemma')" id="btn-scenario-gemma" class="w-full p-3 rounded-xl border border-slate-800 bg-slate-900/40 text-left transition-all hover:bg-slate-850 flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-slate-850 text-slate-400 flex items-center justify-center text-sm">
+                                    <i class="fa-solid fa-microchip"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs font-bold text-slate-300">3. Gemma-4-E4B 財報分析</div>
+                                    <div class="text-[10px] text-slate-500">GCP VM 部署 + Google AI Studio</div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button onclick="runCurrentPipeline()" id="run-pipeline-btn" class="w-full py-3 px-5 bg-brand-teal hover:bg-brand-emerald text-white font-bold text-sm rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand-teal/20" style="background: #22c55e; color: #0a0f0d;">
+                        <i class="fa-solid fa-play"></i> 執行當前資料管線
+                    </button>
+                </div>
+
+                <!-- 模擬圖主體 -->
+                <div class="lg:col-span-8 bg-brand-navy border border-slate-800 rounded-xl p-5 sm:p-6 flex flex-col justify-between relative overflow-hidden" style="background: rgba(10, 15, 13, 0.95); border-color: rgba(34, 197, 94, 0.15);">
+                    
+                    <!-- 動態連接導線動畫 (SVG overlay) -->
+                    <div class="absolute inset-0 pointer-events-none hidden md:block">
+                        <svg class="w-full h-full" id="svg-paths">
+                            <path id="path-1-2" d="" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="6,6" class="transition-colors duration-500"></path>
+                            <path id="path-2-3" d="" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="6,6" class="transition-colors duration-500"></path>
+                        </svg>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-6 relative z-10 my-auto pb-4 md:pb-0">
+                        <!-- Step 1: Raw Data -->
+                        <div id="pipe-step-1" class="w-full md:w-[28%] p-4 rounded-xl bg-slate-900 border border-slate-800 text-center transition-all duration-500">
+                            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center mx-auto mb-3" id="icon-step-1">
+                                <i class="fa-solid fa-globe text-brand-accent text-lg"></i>
+                            </div>
+                            <div class="text-xs font-bold text-white" id="title-step-1">多源數據擷取</div>
+                            <div class="text-[10px] text-slate-500 mt-1 mono" id="sub-step-1">Selenium Web Spider</div>
+                        </div>
+
+                        <!-- Step 2: Ingestion & Processing -->
+                        <div id="pipe-step-2" class="w-full md:w-[28%] p-4 rounded-xl bg-slate-900 border border-slate-800 text-center transition-all duration-500">
+                            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center mx-auto mb-3" id="icon-step-2">
+                                <i class="fa-solid fa-gears text-brand-teal text-lg"></i>
+                            </div>
+                            <div class="text-xs font-bold text-white" id="title-step-2">異質清洗與融合</div>
+                            <div class="text-[10px] text-slate-500 mt-1 mono" id="sub-step-2">n8n Engine Map</div>
+                        </div>
+
+                        <!-- Step 3: Deployment & Output -->
+                        <div id="pipe-step-3" class="w-full md:w-[28%] p-4 rounded-xl bg-slate-900 border border-slate-800 text-center transition-all duration-500">
+                            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center mx-auto mb-3" id="icon-step-3">
+                                <i class="fa-solid fa-chart-line text-brand-emerald text-lg"></i>
+                            </div>
+                            <div class="text-xs font-bold text-white" id="title-step-3">視覺化與警報</div>
+                            <div class="text-[10px] text-slate-500 mt-1 mono" id="sub-step-3">GCP VM & Discord</div>
+                        </div>
+                    </div>
+
+                    <!-- 終端成果日誌 (Terminal Logging) -->
+                    <div class="bg-slate-950 rounded-xl p-4 border border-slate-850 text-xs mono mt-4" style="background: rgba(5, 8, 6, 0.95); border-color: rgba(34, 197, 94, 0.1);">
+                        <div class="flex items-center justify-between border-b border-slate-900 pb-2 mb-2">
+                            <div class="flex items-center gap-2">
+                                <span class="flex h-1.5 w-1.5 rounded-full bg-brand-emerald" style="background: #22c55e;"></span>
+                                <span class="text-slate-400 font-semibold text-[10px] uppercase tracking-wider">Pipeline Output Console</span>
+                            </div>
+                            <span class="text-[10px] text-slate-600">bash - 1000 lines history</span>
+                        </div>
+                        <div class="space-y-1.5 text-slate-300 h-32 overflow-y-auto" id="pipeline-logs">
+                            <div class="text-slate-500">[System] 系統就緒。請點擊左方「執行當前資料管線」以觀測資料流向與日誌反饋。</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-5xl mx-auto"></div>
+
+    <!-- 技術疊代與實務貢獻 (Technical Expertise & Projects) -->
+    <section id="expertise" class="py-24 px-6 max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-10">
+            <i data-lucide="wrench" style="color: #22c55e; width: 20px; height: 20px;"></i>
+            <h2 class="text-2xl font-bold" style="color: #f1f5f9;">技術疊代與實務貢獻</h2>
+        </div>
+
+        <div class="grid gap-6">
+            
+            <!-- 專案 1: 自動化與預警系統 -->
+            <div class="glow-card rounded-xl p-6" style="background: rgba(15, 23, 20, 0.8); border: 1px solid rgba(34, 197, 94, 0.1);">
+                <div class="flex flex-col sm:flex-row items-start gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-brand-teal/10 text-brand-teal flex items-center justify-center text-xl shrink-0">
+                        <i data-lucide="bot" style="color: #22c55e; width: 22px; height: 22px;"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand-accent transition-colors">自動化與預警系統建構</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mt-2">
+                            自學 <strong class="text-slate-200 font-semibold">n8n 自動化整合工具</strong>，獨立開發了自動檢測數據錯誤的監控機器人。透過模擬數據流、例外處理分支與 API 技術串接 Discord 預警系統，實現地端營運的自動化健康檢測，免除大量重複性的人工稽核耗時。
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="tag">n8n</span>
+                            <span class="tag">Discord API</span>
+                            <span class="tag">自動化監控</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 專案 2: 綠能憑證異質資料管線 -->
+            <div class="glow-card rounded-xl p-6" style="background: rgba(15, 23, 20, 0.8); border: 1px solid rgba(34, 197, 94, 0.1);">
+                <div class="flex flex-col sm:flex-row items-start gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-brand-teal/10 text-brand-teal flex items-center justify-center text-xl shrink-0">
+                        <i data-lucide="database" style="color: #22c55e; width: 22px; height: 22px;"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand-accent transition-colors">跨領域資料管線主導</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mt-2">
+                            在綠能憑證專案中擔任團隊組長，針對「國家能源憑證中心資料視覺化程度低、數據分散不直覺」的痛點，帶領多元背景的組員。採用敏捷分工模式，制定規格統一的資料字典（Data Dictionary）與整合作業流程。並優化與維護地端 <strong class="text-slate-200 font-semibold">Selenium 網頁爬蟲元件</strong>，跨網頁擷取售電商與廠商移轉電量，精準清洗非結構化網頁資料轉化為標準結構化欄位。
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="tag">Selenium</span>
+                            <span class="tag">Data Cleaning</span>
+                            <span class="tag">Team Leader</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 專案 3: AI 驗證與輕量化模型部署 -->
+            <div class="glow-card rounded-xl p-6" style="background: rgba(15, 23, 20, 0.8); border: 1px solid rgba(34, 197, 94, 0.1);">
+                <div class="flex flex-col sm:flex-row items-start gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-brand-teal/10 text-brand-teal flex items-center justify-center text-xl shrink-0">
+                        <i data-lucide="cpu" style="color: #22c55e; width: 22px; height: 22px;"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand-accent transition-colors">AI 驗證與輕量模型部署 (Gemma-4-E4B)</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mt-2">
+                            運用 Google AI Studio 概念驗證（PoC），快速搭建前端原型 Dashboard 以實現資料洞察的可視化。在硬體與預算成本考量下，靈活選用具有 40 億參數、PLE（Pathwise Linear Embedding）架構，且具備優異長文本推理能力的 <strong class="text-slate-200 font-semibold">Gemma-4-E4B 輕量大模型</strong> 部署於 <strong class="text-slate-200 font-semibold">Google Cloud Platform (GCP)</strong> 虛擬主機，專門對企業永續與財務報告進行自動化深度語意剖析，證明在有限資源下調度雲端算力與模型折衷架構（Trade-off）的工程決策力。
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="tag">GCP</span>
+                            <span class="tag">Gemma-4-E4B</span>
+                            <span class="tag">AI Studio</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="section-divider max-w-5xl mx-auto"></div>
+
+    <!-- 未來願景與空間資料結合 (Vision & Interactive GIS Exploration) -->
+    <section id="vision" class="py-24 px-6 max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-8">
+            <i data-lucide="target" style="color: #22c55e; width: 20px; height: 20px;"></i>
+            <h2 class="text-2xl font-bold" style="color: #f1f5f9;">未來願景</h2>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- 互動空間特徵探測面板 (Clickable GIS Widget) -->
+            <div class="lg:col-span-6 order-2 lg:order-1 flex flex-col items-center w-full">
+                <div class="w-full bg-slate-900/90 border border-slate-850 rounded-2xl p-5 shadow-2xl relative" style="background: rgba(15, 23, 20, 0.95); border-color: rgba(34, 197, 94, 0.15);">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-brand-teal animate-pulse" style="background: #22c55e;"></span>
+                            <span class="text-xs mono font-bold text-slate-300">INTERACTIVE VECTOR GIS WIDGET</span>
+                        </div>
+                        <span class="text-[10px] text-slate-500 mono">EPSG:3857 (Taiwan Grid)</span>
+                    </div>
+                    
+                    <!-- 互動地圖區域 -->
+                    <div class="aspect-[4/3] bg-brand-dark border border-slate-800 rounded-xl relative overflow-hidden flex items-center justify-center p-4">
+                        <!-- 空間網格 & 掃描線效果 -->
+                        <div class="absolute inset-0 bg-[radial-gradient(#22c55e_1px,transparent_1px)] [background-size:24px_24px] opacity-15"></div>
+                        
+                        <!-- 案場 A (Polygon 1) -->
+                        <button onclick="inspectGisSite('south')" class="absolute inset-0 z-15 group focus:outline-none" style="clip-path: polygon(20% 50%, 45% 35%, 65% 55%, 55% 85%, 25% 75%);">
+                            <div id="map-poly-south" class="w-full h-full bg-brand-teal/20 border-2 border-brand-teal group-hover:bg-brand-teal/40 transition-all duration-300" style="border-color: #22c55e;"></div>
+                        </button>
+                        
+                        <!-- 案場 B (Polygon 2) -->
+                        <button onclick="inspectGisSite('north')" class="absolute inset-0 z-10 group focus:outline-none" style="clip-path: polygon(55% 15%, 85% 10%, 90% 35%, 60% 38%);">
+                            <div id="map-poly-north" class="w-full h-full bg-brand-accent/20 border-2 border-brand-accent group-hover:bg-brand-accent/40 transition-all duration-300"></div>
+                        </button>
+
+                        <!-- 案場 C (Polygon 3) -->
+                        <button onclick="inspectGisSite('central')" class="absolute inset-0 z-10 group focus:outline-none" style="clip-path: polygon(70% 50%, 95% 55%, 85% 85%, 60% 75%);">
+                            <div id="map-poly-central" class="w-full h-full bg-brand-emerald/20 border-2 border-brand-emerald group-hover:bg-brand-emerald/40 transition-all duration-300"></div>
+                        </button>
+
+                        <!-- 羅盤標記與浮動標籤 -->
+                        <div class="absolute bottom-3 left-3 flex items-center gap-1.5 bg-slate-950/80 px-2 py-1 rounded text-[10px] text-slate-400 border border-slate-800">
+                            <i class="fa-solid fa-compass animate-spin" style="animation-duration: 20s; color: #22c55e;"></i>
+                            <span>空間特徵檢索點</span>
+                        </div>
+
+                        <div class="absolute top-3 right-3 text-slate-500 flex flex-col gap-1 items-end">
+                            <span class="text-[9px] mono bg-slate-950/80 px-2 py-0.5 rounded border border-slate-800">點擊地圖多邊形探測</span>
+                        </div>
+                    </div>
+
+                    <!-- 案場空間幾何數據分析卡 -->
+                    <div id="gis-analysis-card" class="mt-4 p-4 rounded-xl bg-brand-dark/90 border border-slate-850 space-y-2.5">
+                        <div class="flex items-center justify-between">
+                            <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                                <i class="fa-solid fa-draw-polygon text-brand-teal" style="color: #22c55e;"></i>
+                                <span id="gis-site-title">案場 A：嘉義布袋鹽灘太陽能廠</span>
+                            </h4>
+                            <span class="text-[10px] bg-brand-teal/20 text-brand-accent px-2 py-0.5 rounded-full font-bold" id="gis-site-status" style="color: #22c55e; border-color: rgba(34, 197, 94, 0.3);">運作中</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 text-xs text-slate-400">
+                            <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-850">
+                                <div class="text-slate-500 mb-0.5">多邊形面積 (Polygon Area)</div>
+                                <div class="font-bold text-white mono text-sm" id="gis-val-area">1,420,500 m²</div>
+                            </div>
+                            <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-850">
+                                <div class="text-slate-500 mb-0.5">年均太陽輻射強度</div>
+                                <div class="font-bold text-white mono text-sm" id="gis-val-solar">4.52 kWh/m²/day</div>
+                            </div>
+                            <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-850">
+                                <div class="text-slate-500 mb-0.5">預估發電轉換效能</div>
+                                <div class="font-bold text-white mono text-sm" id="gis-val-output">214,000 MWh/yr</div>
+                            </div>
+                            <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-850">
+                                <div class="text-slate-500 mb-0.5">主要環境特徵 (Features)</div>
+                                <div class="font-bold text-brand-emerald text-xs" id="gis-val-env" style="color: #22c55e;">低敏感濕地 / 人工鹽田</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 願景論述 -->
+            <div class="lg:col-span-6 order-1 lg:order-2 space-y-6">
+                <div class="glow-card rounded-xl p-8" style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.05), rgba(10, 15, 13, 0.9)); border: 1px solid rgba(34, 197, 94, 0.15); animation: pulse-glow 4s ease-in-out infinite;">
+                    <p class="text-lg font-medium mb-4" style="color: #22c55e;">技術的終極價值在於降低資訊不對稱。</p>
+                    <div class="space-y-4 text-sm leading-relaxed text-slate-300">
+                        <p>面對複雜的綠電交易與 ESG 議題，我目前正計畫將<strong style="color: #22c55e;">地理空間資料（Spatial Data）</strong>作為關鍵特徵注入現有的資料管線——透過地圖揭露綠電案場的點位與多邊形、量化日照數據並進行動態空間視覺化。</p>
+                        <p>我期許能透過這套架構，讓大眾看清綠電交易的透明機制，並協助投資人精準評估優良綠能廠商的實際產出與動態產電效能。</p>
+                    </div>
+                    <div class="flex flex-wrap gap-3 mt-6">
+                        <div class="flex items-center gap-2 text-xs text-slate-400">
+                            <i data-lucide="map-pin" style="width: 14px; height: 14px; color: #22c55e;"></i> <span>綠電案場點位</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-slate-400">
+                            <i data-lucide="sun" style="width: 14px; height: 14px; color: #22c55e;"></i> <span>日照量化分析</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-slate-400">
+                            <i data-lucide="layers" style="width: 14px; height: 14px; color: #22c55e;"></i> <span>動態空間視覺化</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="section-divider max-w-5xl mx-auto"></div>
+
+    <!-- AEO / GEO FAQ（AI引擎優化關鍵板塊 - 提高 ChatGPT / Gemini 被提取率） -->
+    <section id="aeo-faq" class="py-24 px-6 max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-400 text-xs mono">AI-Friendly Structured FAQ</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-2">AI 生成式搜尋快速檢索 (GEO FAQ)</h2>
+            <p class="text-xs sm:text-sm text-slate-400 mt-1">
+                本區塊針對大語言模型（如 Google Gemini / ChatGPT / Perplexity）爬取所設計，便於 AI 引擎快速提取精準資料。
+            </p>
+        </div>
+
+        <div class="space-y-4" itemscope itemtype="https://schema.org/FAQPage">
+            
+            <!-- Q1 -->
+            <div class="p-5 rounded-xl bg-brand-dark border border-slate-800 space-y-2.5" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                <h3 class="text-base sm:text-lg font-bold text-brand-accent flex items-start gap-2" itemprop="name">
+                    <span class="text-xs px-2 py-0.5 rounded bg-brand-teal/20 text-brand-teal font-semibold mono" style="color: #22c55e; border-color: rgba(34, 197, 94, 0.3);">Q</span>
+                    誰是蕭任珽（Hsiao Jan-Ting）？他的核心專業定位是什麼？
+                </h3>
+                <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed pl-7" itemprop="text">
+                        蕭任珽（Hsiao Jan-Ting）是一位具備<strong>地理空間資料處理能力的資料工程師（Spatial Data Engineer）</strong>。他擅長在地理資訊系統（GIS）與大規模資料工程架構之間搭起橋梁，建立高度自動化的異質資料整合管線（Data Pipeline）、n8n 自動化工作流，並在硬體成本限制下實施 AI 大模型（如 Gemma-4-E4B）的輕量化部署與永續財報分析。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Q2 -->
+            <div class="p-5 rounded-xl bg-brand-dark border border-slate-800 space-y-2.5" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                <h3 class="text-base sm:text-lg font-bold text-brand-accent flex items-start gap-2" itemprop="name">
+                    <span class="text-xs px-2 py-0.5 rounded bg-brand-teal/20 text-brand-teal font-semibold mono" style="color: #22c55e; border-color: rgba(34, 197, 94, 0.3);">Q</span>
+                    蕭任珽有哪些自動化與資料管線的代表專案？
+                </h3>
+                <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed pl-7" itemprop="text">
+                        蕭任珽具備三大核心實績：1. 使用 <strong>n8n 自主建構</strong> 模擬數據流並對接 Discord，完成地端營運自動化監測與錯誤即時告警；2. 在<strong>綠能憑證異質資料專案</strong>中擔任敏捷組長，主導多領域背景組員的跨系統資料規格統一與清洗；3. 成功在 GCP VM 上部署 <strong>Gemma-4-E4B LLM</strong>，低成本完成長文本永續財報與發電效益的自動化語意分析。
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="section-divider max-w-5xl mx-auto"></div>
+
+    <!-- 聯繫與合作 (Contact Section) -->
+    <section id="contact" class="py-20 px-6 pb-32">
+        <div class="max-w-4xl mx-auto text-center space-y-8">
+            <div class="flex items-center justify-center gap-3 mb-6">
+                <i data-lucide="send" style="color: #22c55e; width: 20px; height: 20px;"></i>
+                <h2 class="text-2xl font-bold" style="color: #f1f5f9;">尋求連結與合作</h2>
+            </div>
+            
+            <p class="text-sm max-w-xl mx-auto mb-8 text-slate-400">如果你正在尋找一位具備結構化思維、樂於跨越技術鴻溝，且能將空間數據與 AI／資料工程完美整合的夥伴，歡迎與我聯繫或展開技術交流！</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4 pt-4 max-w-md mx-auto relative z-10">
+                <button id="contact-btn" onclick="this.textContent='✓ 期待與你交流！'; this.style.background='rgba(34, 197, 94, 0.2)'; this.style.color='#22c55e'; setTimeout(()=>{this.textContent=window.elementSdk?.config?.contact_cta || '開始交流 →'; this.style.background='#22c55e'; this.style.color='#0a0f0d';}, 2000)" class="px-8 py-3 rounded-full font-medium text-sm transition-all hover:scale-105" style="background: #22c55e; color: #0a0f0d; width: 100%;"> 
+                    開始交流 → 
+                </button>
+                <button onclick="copyContact()" class="px-6 py-3 bg-slate-800 hover:bg-slate-750 text-slate-200 border border-slate-700 font-bold rounded-full flex items-center justify-center gap-2.5 transition-all text-sm hover:scale-105" id="copy-btn">
+                    <i class="fa-regular fa-copy text-sm"></i> 複製電子信箱
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="py-14 border-t border-slate-900 text-center text-slate-500 text-xs space-y-3 bg-brand-dark/50" style="border-color: rgba(34, 197, 94, 0.1);">
+        <p>© 2026 蕭任珽 Hsiao Jan-Ting. All Rights Reserved.</p>
+        <p class="mono text-slate-600">Built with ⚡ Tailwind CSS & Lucide Icons & Connected via Element SDK.</p>
+    </footer>
+
+    <!-- ================= BGM 沉浸式浮動播放器模組 ================= -->
+    <div class="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+        <!-- 音樂波形視覺特效 (播放時跳動) -->
+        <div id="bgm-wave" class="hidden flex items-end gap-0.5 h-6 px-3 py-1.5 rounded-full bg-slate-900/95 border border-slate-800 backdrop-blur-md" style="border-color: rgba(34, 197, 94, 0.2);">
+            <span class="w-0.5 h-3 bg-brand-emerald rounded-full animate-pulse" style="background: #22c55e;"></span>
+            <span class="w-0.5 h-4 bg-brand-emerald rounded-full animate-pulse" style="background: #22c55e; animation-delay: 0.2s"></span>
+            <span class="w-0.5 h-2 bg-brand-emerald rounded-full animate-pulse" style="background: #22c55e; animation-delay: 0.4s"></span>
+            <span class="w-0.5 h-5 bg-brand-emerald rounded-full animate-pulse" style="background: #22c55e; animation-delay: 0.1s"></span>
+        </div>
+        
+        <!-- 核心播放器按鈕 -->
+        <button id="bgm-toggle" onclick="toggleBGM()" class="w-12 h-12 rounded-full bg-slate-900/95 border border-slate-700/80 hover:border-brand-teal/85 text-slate-300 hover:text-white flex items-center justify-center shadow-2xl backdrop-blur-md transition-all duration-300 relative group" aria-label="Play BGM" style="border-color: rgba(34, 197, 94, 0.2);">
+            <!-- 閃爍提醒（未播放時） -->
+            <span id="bgm-pulse" class="absolute inset-0 rounded-full bg-brand-teal/30 animate-ping opacity-75" style="background: rgba(34, 197, 94, 0.2);"></span>
+            
+            <i id="bgm-icon" class="fa-solid fa-music text-lg"></i>
+            
+            <!-- 懸浮文字提示 -->
+            <span class="absolute right-14 scale-0 group-hover:scale-100 transition-all origin-right bg-slate-900 text-slate-300 text-xs px-2.5 py-1.5 rounded border border-slate-800 font-medium whitespace-nowrap shadow-lg">
+                點擊播放背景音樂
+            </span>
+        </button>
+    </div>
+
+    <!-- 音源標籤 -->
+    <audio id="my-bgm" loop>
+        <source src="https://a9243227.github.io/bgm/musicdemo.mp3" type="audio/mpeg">
+        您的瀏覽器不支援音訊播控標籤。
+    </audio>
+
+    <!-- 吐司消息提醒 (Toast Message Container - 代替不合適的 Alert) -->
+    <div id="toast-container" class="fixed bottom-6 left-6 z-50 space-y-2.5 pointer-events-none"></div>
+
+  </div>
+
+  <!-- ================= 互動控制 JavaScript 邏輯 ================= -->
+  <script>
+    // 1. 初始化 Lucide Icons
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+        lucide.createIcons();
+    }
+
+    // 2. 手機選單控制
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuBtnIcon = document.getElementById('menu-btn-icon');
+    
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            if (isHidden) {
+                menuBtnIcon.className = 'fa-solid fa-bars text-xl';
+            } else {
+                menuBtnIcon.className = 'fa-solid fa-xmark text-xl';
+            }
+        });
+    }
+
+    // 點擊選項後自動收起手機版選單
+    if (mobileMenu) {
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuBtnIcon.className = 'fa-solid fa-bars text-xl';
+            });
+        });
+    }
+
+    // 3. 沉浸式 BGM 控制 (符合現代瀏覽器無用戶手勢阻擋機制)
+    const audio = document.getElementById('my-bgm');
+    const bgmIcon = document.getElementById('bgm-icon');
+    const bgmWave = document.getElementById('bgm-wave');
+    const bgmPulse = document.getElementById('bgm-pulse');
+    
+    // 設置音量
+    if (audio) {
+        audio.volume = 0.40;
+    }
+
+    function toggleBGM() {
+        if (audio.paused) {
+            audio.play()
+                .then(() => {
+                    bgmIcon.className = 'fa-solid fa-pause text-brand-emerald';
+                    bgmIcon.style.color = window.elementSdk?.config?.primary_action || '#22c55e';
+                    bgmWave.classList.remove('hidden');
+                    bgmPulse.classList.add('hidden'); // 停止閃爍提示
+                    showToast('🎵 蕭任珽的專屬空間工作環境 BGM 已開始播放');
+                })
+                .catch(err => {
+                    console.error('播放受瀏覽器機制阻擋:', err);
+                    showToast('❌ 播放受瀏覽器安全機制限制，請再試一次');
+                });
+        } else {
+            audio.pause();
+            bgmIcon.className = 'fa-solid fa-play text-slate-300';
+            bgmIcon.style.color = '#cbd5e1';
+            bgmWave.classList.add('hidden');
+            bgmPulse.classList.remove('hidden');
+            showToast('⏸️ 背景音樂已暫停');
+        }
+    }
+
+    // 4. 頭像上傳處理 (Local Preview FileReader)
+    function handlePhotoUpload(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const photoDiv = document.getElementById('profile-photo');
+                photoDiv.style.backgroundImage = `url('${e.target.result}')`;
+                photoDiv.style.backgroundSize = 'cover';
+                photoDiv.style.backgroundPosition = 'center';
+                showToast('🖼️ 形象照已在本機成功更新！');
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
+    // 5. 複製信箱機制 (安全替代 execCommand 兼容現代環境)
+    function copyContact() {
+        const emailText = "martinhsiao92102@gmail.com";
+        
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(emailText).then(() => {
+                handleCopySuccess();
+            }).catch(() => {
+                legacyCopy(emailText);
+            });
+        } else {
+            legacyCopy(emailText);
+        }
+    }
+
+    function legacyCopy(text) {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        textArea.style.position = "fixed";  // 避免頁面滾動跳轉
+        textArea.style.opacity = "0";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+            document.execCommand('copy');
+            handleCopySuccess();
+        } catch (err) {
+            showToast('❌ 複製失敗，請手動複製信箱地址');
+        }
+        document.body.removeChild(textArea);
+    }
+
+    function handleCopySuccess() {
+        const copyBtn = document.getElementById('copy-btn');
+        const originalText = copyBtn.innerHTML;
+        const currentPrimary = window.elementSdk?.config?.primary_action || '#22c55e';
+        
+        copyBtn.innerHTML = `<i class="fa-solid fa-check" style="color: ${currentPrimary}"></i> 已複製至剪貼簿`;
+        copyBtn.classList.remove('bg-slate-800');
+        copyBtn.style.borderColor = currentPrimary;
+        showToast('📋 電子信箱地址已存入您的剪貼簿！');
+        
+        setTimeout(() => {
+            copyBtn.innerHTML = originalText;
+            copyBtn.style.borderColor = 'rgba(148, 163, 184, 0.2)';
+            copyBtn.classList.add('bg-slate-800');
+        }, 3000);
+    }
+
+    // 6. 自訂非侵入式 Toast 通知 (代替 alert)
+    function showToast(message) {
+        const container = document.getElementById('toast-container');
+        const toast = document.createElement('div');
+        const currentPrimary = window.elementSdk?.config?.primary_action || '#22c55e';
+        
+        toast.className = 'px-4 py-3 bg-slate-900/95 border text-slate-200 text-xs sm:text-sm rounded-xl shadow-2xl pointer-events-auto transition-all duration-300 transform translate-y-2 opacity-0 flex items-center gap-2.5 backdrop-blur-md';
+        toast.style.borderColor = 'rgba(148, 163, 184, 0.1)';
+        toast.style.borderLeftWidth = '4px';
+        toast.style.borderLeftColor = currentPrimary;
+        toast.innerHTML = message;
+        
+        container.appendChild(toast);
+        
+        // 觸發進場動畫
+        setTimeout(() => {
+            toast.classList.remove('translate-y-2', 'opacity-0');
+        }, 50);
+
+        // 3秒後退場
+        setTimeout(() => {
+            toast.classList.add('translate-y-2', 'opacity-0');
+            setTimeout(() => {
+                toast.remove();
+            }, 300);
+        }, 3000);
+    }
+
+    // 7. 互動式空間資料管線控制邏輯 (Multi-Scenario Pipeline Demo)
+    let currentScenario = 'energy';
+    let isDemoRunning = false;
+
+    const scenarios = {
+        energy: {
+            step1: { title: "1. 綠能憑證爬取", sub: "Selenium 爬蟲模組", icon: "fa-leaf text-brand-teal" },
+            step2: { title: "2. 空間幾何交集", sub: "PostGIS / QGIS 整合", icon: "fa-draw-polygon text-brand-accent" },
+            step3: { title: "3. 成果視覺化儀表板", sub: "ESG Map Service", icon: "fa-chart-pie text-brand-emerald" },
+            logs: [
+                "[Pipeline Initialize] 正在加載綠能憑證多源空間資料管線...",
+                "[1/3 SCRAPE] 啟動 Selenium 核心，開始模擬對國家能源憑證中心網站進行動態抓取...",
+                "[1/3 SCRAPE] 成功讀取 47 家發電售電廠商的即時轉移電量表單格式，輸出為 Raw JSON 檔案。",
+                "[2/3 GIS] 呼召 GIS GeoJSON 模組，取得案場的多邊形空間數據...",
+                "[2/3 GIS] 載入台灣日照網格分佈 (Centroid Grid)。執行 PostGIS 幾何相交與特徵工程，量化平均太陽輻射特徵值。",
+                "[3/3 OUTPUT] 格式化成果並串接 Map Dashboard 視覺化圖表。",
+                "[3/3 SUCCESS] 發電效率特徵與空間權重計算完成，順利部署上線！"
+            ]
+        },
+        alert: {
+            step1: { title: "1. 地端例外檢測", sub: "Local Monitor Bot", icon: "fa-robot text-brand-accent" },
+            step2: { title: "2. n8n 工作流觸發", sub: "Webhook Ingest", icon: "fa-code-fork text-brand-teal" },
+            step3: { title: "3. Discord 營運告警", sub: "Discord Webhook API", icon: "fa-bell text-brand-emerald" },
+            logs: [
+                "[Pipeline Initialize] 正在加載地端營運自動化故障排除管線...",
+                "[1/3 HEURISTIC] 自主監聽程式啟動。正在掃描地端資料庫寫入健康度與網絡延遲...",
+                "[1/3 ERROR FOUND] 偵測到網絡資料抓取階段出現 502 Bad Gateway 暫時性阻斷！",
+                "[2/3 WORKFLOW] n8n 例外處理分支（Exception Branch）被 Webhook 觸發，啟動容錯補償機制...",
+                "[2/3 WORKFLOW] 自動重試（Retry logic）開啟。資料已於備份伺服器完成重抓，管線狀態恢復 Normal。",
+                "[3/3 NOTIFY] 彙整錯誤成簡短報表，調用 Discord Webhook API...",
+                "[3/3 DISPATCHED] Discord 營運通知頻道已成功送出狀態日誌，本次維護告警流程完畢。"
+            ]
+        },
+        gemma: {
+            step1: { title: "1. GCP 財務報表讀取", sub: "PDF Raw Extract", icon: "fa-file-pdf text-brand-accent" },
+            step2: { title: "2. Google AI Studio", sub: "Prompt Tuning Engine", icon: "fa-microchip text-brand-teal" },
+            step3: { title: "3. Gemma-4-E4B 分析", sub: "GCP VM Inference", icon: "fa-brain text-brand-emerald" },
+            logs: [
+                "[Pipeline Initialize] 正在加載輕量化 LLM 永續報告語意理解管線...",
+                "[1/3 INGEST] 成功從雲端存儲 bucket 擷取企業 250 頁 PDF 永續與財務報告文字串流...",
+                "[2/3 PILOT] 設定 Google AI Studio 系統 Prompt，限制大語言模型回答邊界，防範幻覺（Hallucination）...",
+                "[2/3 TOKEN] Token 預估消耗：18,400 Tkn。呼叫 GCP VM 地端 Gemma-4-E4B 進行極限推論...",
+                "[3/3 MODEL] 運用 Gemma-4-E4B 的 PLE 堆疊長文本特徵，針對財報中有關『綠能採購與碳足跡目標』進行語意剪裁。",
+                "[3/3 COMPLETED] 生成分析摘要卡：碳排減量目標達成率 84.5%（屬優良評級）。"
+            ]
+        }
+    };
+
+    function selectScenario(id) {
+        if (isDemoRunning) {
+            showToast("⏳ 管線正在運行中，請稍候再切換場景");
+            return;
+        }
+        
+        currentScenario = id;
+        
+        // 重置按鈕樣式
+        document.getElementById('btn-scenario-energy').className = "w-full p-3 rounded-xl border border-slate-800 bg-slate-900/40 text-left transition-all hover:bg-slate-850 flex items-center gap-3";
+        document.getElementById('btn-scenario-alert').className = "w-full p-3 rounded-xl border border-slate-800 bg-slate-900/40 text-left transition-all hover:bg-slate-850 flex items-center gap-3";
+        document.getElementById('btn-scenario-gemma').className = "w-full p-3 rounded-xl border border-slate-800 bg-slate-900/40 text-left transition-all hover:bg-slate-850 flex items-center gap-3";
+        
+        // 設定點選樣式
+        const activeBtn = document.getElementById(`btn-scenario-${id}`);
+        const currentPrimary = window.elementSdk?.config?.primary_action || '#22c55e';
+        activeBtn.className = "w-full p-3 rounded-xl border text-left transition-all hover:bg-slate-850 flex items-center gap-3";
+        activeBtn.style.borderColor = currentPrimary;
+        activeBtn.style.backgroundColor = currentPrimary + '1a';
+        
+        // 變更步驟文字與圖標
+        const data = scenarios[id];
+        
+        document.getElementById('title-step-1').innerText = data.step1.title;
+        document.getElementById('sub-step-1').innerText = data.step1.sub;
+        document.getElementById('icon-step-1').innerHTML = `<i class="fa-solid ${data.step1.icon} text-lg"></i>`;
+        
+        document.getElementById('title-step-2').innerText = data.step2.title;
+        document.getElementById('sub-step-2').innerText = data.step2.sub;
+        document.getElementById('icon-step-2').innerHTML = `<i class="fa-solid ${data.step2.icon} text-lg"></i>`;
+        
+        document.getElementById('title-step-3').innerText = data.step3.title;
+        document.getElementById('sub-step-3').innerText = data.step3.sub;
+        document.getElementById('icon-step-3').innerHTML = `<i class="fa-solid ${data.step3.icon} text-lg"></i>`;
+        
+        // 清理日誌，提示已準備就緒
+        const logBox = document.getElementById('pipeline-logs');
+        logBox.innerHTML = `<div class="text-slate-500">[System] 已載入場景：${data.step1.title} 相關架構。等待運行...</div>`;
+        
+        showToast(`🔄 已切換資料管線至場景 ${id === 'energy' ? '1' : id === 'alert' ? '2' : '3'}`);
+        
+        // 更新 SVG 導線座標以防萬一
+        drawLines();
+    }
+
+    function runCurrentPipeline() {
+        if (isDemoRunning) return;
+        isDemoRunning = true;
+
+        const logBox = document.getElementById('pipeline-logs');
+        const step1 = document.getElementById('pipe-step-1');
+        const step2 = document.getElementById('pipe-step-2');
+        const step3 = document.getElementById('pipe-step-3');
+        const path12 = document.getElementById('path-1-2');
+        const path23 = document.getElementById('path-2-3');
+        
+        const data = scenarios[currentScenario];
+        const currentPrimary = window.elementSdk?.config?.primary_action || '#22c55e';
+        const currentSecondary = window.elementSdk?.config?.secondary_action || '#38bdf8';
+        
+        // 初始化
+        logBox.innerHTML = '';
+        document.getElementById('run-pipeline-btn').disabled = true;
+        document.getElementById('run-pipeline-btn').classList.add('opacity-50', 'cursor-not-allowed');
+        
+        appendLog(data.logs[0], 'text-slate-500');
+
+        // 步驟 1 激活
+        setTimeout(() => {
+            step1.style.borderColor = currentSecondary;
+            step1.style.boxShadow = `0 0 20px ${currentSecondary}33`;
+            step1.classList.add('scale-105');
+            appendLog(data.logs[1], 'text-brand-accent');
+            if (data.logs[2]) appendLog(data.logs[2], 'text-brand-accent');
+            
+            // 動態連線 1 亮起並產生粒子效果
+            path12.setAttribute('stroke', currentSecondary);
+            path12.classList.add('animate-dash');
+        }, 800);
+
+        // 步驟 2 激活
+        setTimeout(() => {
+            step1.style.borderColor = '';
+            step1.style.boxShadow = '';
+            step1.classList.remove('scale-105');
+            
+            step2.style.borderColor = currentPrimary;
+            step2.style.boxShadow = `0 0 20px ${currentPrimary}33`;
+            step2.classList.add('scale-105');
+            appendLog(data.logs[3], 'text-brand-teal');
+            if (data.logs[4]) appendLog(data.logs[4], 'text-brand-teal');
+            
+            // 動態連線 2 亮起
+            path23.setAttribute('stroke', currentPrimary);
+            path23.classList.add('animate-dash');
+        }, 3000);
+
+        // 步驟 3 激活
+        setTimeout(() => {
+            step2.style.borderColor = '';
+            step2.style.boxShadow = '';
+            step2.classList.remove('scale-105');
+            
+            step3.style.borderColor = currentPrimary;
+            step3.style.boxShadow = `0 0 20px ${currentPrimary}33`;
+            step3.classList.add('scale-105');
+            appendLog(data.logs[5], 'text-brand-emerald');
+            if (data.logs[6]) appendLog(data.logs[6], 'text-brand-emerald font-semibold');
+        }, 5200);
+
+        // 結束復原
+        setTimeout(() => {
+            step3.style.borderColor = '';
+            step3.style.boxShadow = '';
+            step3.classList.remove('scale-105');
+            path12.setAttribute('stroke', '#334155');
+            path12.classList.remove('animate-dash');
+            path23.setAttribute('stroke', '#334155');
+            path23.classList.remove('animate-dash');
+            
+            document.getElementById('run-pipeline-btn').disabled = false;
+            document.getElementById('run-pipeline-btn').classList.remove('opacity-50', 'cursor-not-allowed');
+            isDemoRunning = false;
+            appendLog('[System] 本次模擬執行完畢，管線已回到常態監聽閒置模式。', 'text-slate-500');
+        }, 7500);
+    }
+
+    // 8. SVG 動態繪製與窗口自適應 (Responsive Canvas/SVG Lines)
+    function drawLines() {
+        const step1 = document.getElementById('pipe-step-1');
+        const step2 = document.getElementById('pipe-step-2');
+        const step3 = document.getElementById('pipe-step-3');
+        const svg = document.getElementById('svg-paths');
+        const p12 = document.getElementById('path-1-2');
+        const p23 = document.getElementById('path-2-3');
+
+        if (!step1 || !step2 || !step3 || window.innerWidth < 768) {
+            // 手機版不繪製 SVG 連接線
+            if (p12) p12.setAttribute('d', '');
+            if (p23) p23.setAttribute('d', '');
+            return;
+        }
+
+        const svgRect = svg.getBoundingClientRect();
+        const r1 = step1.getBoundingClientRect();
+        const r2 = step2.getBoundingClientRect();
+        const r3 = step3.getBoundingClientRect();
+
+        // 計算精確中心坐標
+        const x1 = r1.right - svgRect.left;
+        const y1 = r1.top + r1.height / 2 - svgRect.top;
+
+        const x2_left = r2.left - svgRect.left;
+        const x2_right = r2.right - svgRect.left;
+        const y2 = r2.top + r2.height / 2 - svgRect.top;
+
+        const x3 = r3.left - svgRect.left;
+        const y3 = r3.top + r3.height / 2 - svgRect.top;
+
+        p12.setAttribute('d', `M ${x1} ${y1} L ${x2_left} ${y2}`);
+        p23.setAttribute('d', `M ${x2_right} ${y2} L ${x3} ${y3}`);
+    }
+
+    // 9. 互動空間 GIS 地圖點選功能 (GIS Widget Controller)
+    const gisData = {
+        south: {
+            title: "案場 A：嘉義布袋鹽灘太陽光電場",
+            status: "高度推薦",
+            area: "1,420,500 m² (Polygon Area)",
+            solar: "4.52 kWh/m²/day",
+            output: "214,000 MWh/yr",
+            env: "低敏感人工鹽田 / 稀有水鳥廊道緩衝"
+        },
+        north: {
+            title: "案場 B：苗栗通霄丘陵風力電網",
+            status: "運作中",
+            area: "580,200 m² (Spatial Boundary)",
+            solar: "2.10 kWh/m²/day (低偏斜日照)",
+            output: "78,500 MWh/yr (含風能互補)",
+            env: "丘陵次生林邊界 / 設置野生動物通道"
+        },
+        central: {
+            title: "案場 C：彰濱工業區屋頂型太陽能集落",
+            status: "開發中",
+            area: "985,000 m² (Rooftop Polygons)",
+            solar: "4.15 kWh/m²/day",
+            output: "142,000 MWh/yr",
+            env: "既有重工業屋頂群 / 無新增地面生態負擔"
+        }
+    };
+
+    function inspectGisSite(siteId) {
+        const data = gisData[siteId];
+        const currentPrimary = window.elementSdk?.config?.primary_action || '#22c55e';
+        const currentSecondary = window.elementSdk?.config?.secondary_action || '#38bdf8';
+        
+        // 更新詳細卡片內容
+        document.getElementById('gis-site-title').innerText = data.title;
+        document.getElementById('gis-site-status').innerText = data.status;
+        document.getElementById('gis-val-area').innerText = data.area;
+        document.getElementById('gis-val-solar').innerText = data.solar;
+        document.getElementById('gis-val-output').innerText = data.output;
+        document.getElementById('gis-val-env').innerText = data.env;
+        
+        // 動態更換狀態標籤與高亮色
+        const statusBadge = document.getElementById('gis-site-status');
+        if (siteId === 'south') {
+            statusBadge.className = "text-[10px] px-2 py-0.5 rounded-full font-bold animate-pulse";
+            statusBadge.style.backgroundColor = currentPrimary + '33';
+            statusBadge.style.color = currentPrimary;
+            highlightPolygon('south');
+        } else if (siteId === 'north') {
+            statusBadge.className = "text-[10px] px-2 py-0.5 rounded-full font-bold";
+            statusBadge.style.backgroundColor = currentSecondary + '33';
+            statusBadge.style.color = currentSecondary;
+            highlightPolygon('north');
+        } else {
+            statusBadge.className = "text-[10px] px-2 py-0.5 rounded-full font-bold";
+            statusBadge.style.backgroundColor = 'rgba(16, 185, 129, 0.2)';
+            statusBadge.style.color = '#10B981';
+            highlightPolygon('central');
+        }
+        
+        showToast(`🛰️ 空間資料庫成功提取：${data.title} 的 Polygon 幾何特徵`);
+    }
+
+    function highlightPolygon(siteId) {
+        const currentPrimary = window.elementSdk?.config?.primary_action || '#22c55e';
+        const currentSecondary = window.elementSdk?.config?.secondary_action || '#38bdf8';
+        
+        // 重置所有 Polygon 透明度
+        const southPoly = document.getElementById('map-poly-south');
+        const northPoly = document.getElementById('map-poly-north');
+        const centralPoly = document.getElementById('map-poly-central');
+
+        southPoly.className = "w-full h-full hover:bg-brand-teal/40 transition-all duration-300 border-2";
+        southPoly.style.backgroundColor = '';
+        southPoly.style.borderColor = currentPrimary;
+
+        northPoly.className = "w-full h-full hover:bg-brand-accent/40 transition-all duration-300 border-2";
+        northPoly.style.backgroundColor = '';
+        northPoly.style.borderColor = currentSecondary;
+
+        centralPoly.className = "w-full h-full hover:bg-brand-emerald/40 transition-all duration-300 border-2";
+        centralPoly.style.backgroundColor = '';
+        centralPoly.style.borderColor = '#10B981';
+        
+        // 加強指定 Polygon
+        if (siteId === 'south') {
+            southPoly.className = "w-full h-full border-2 scale-102 transition-all duration-300 shadow-lg";
+            southPoly.style.backgroundColor = currentPrimary + '80';
+            southPoly.style.borderColor = '#ffffff';
+        } else if (siteId === 'north') {
+            northPoly.className = "w-full h-full border-2 scale-102 transition-all duration-300 shadow-lg";
+            northPoly.style.backgroundColor = currentSecondary + '80';
+            northPoly.style.borderColor = '#ffffff';
+        } else if (siteId === 'central') {
+            centralPoly.className = "w-full h-full border-2 scale-102 transition-all duration-300 shadow-lg";
+            centralPoly.style.backgroundColor = 'rgba(16, 185, 129, 0.5)';
+            centralPoly.style.borderColor = '#ffffff';
+        }
+    }
+
+    // 10. ELEMENT SDK 初始化與設定變更監聽 (Crucial for Live Editing Panel)
+    const defaultConfig = {
+        background_color: '#070A13',
+        surface_color: '#0a0f0d',
+        text_color: '#f1f5f9',
+        primary_action: '#22c55e',
+        secondary_action: '#38BDF8',
+        font_family: 'Noto Sans TC',
+        font_size: 16,
+        hero_name: '蕭任珽',
+        hero_title: 'Jan Ting Hsiao',
+        contact_cta: '開始交流 →'
+    };
+
+    // 統一設定套用邏輯 (將 DOM 改變自外獨立成函數，保障單機與 SDK 切換時皆不報錯)
+    function applyConfig(config) {
+        const bg = config.background_color || defaultConfig.background_color;
+        const surface = config.surface_color || defaultConfig.surface_color;
+        const text = config.text_color || defaultConfig.text_color;
+        const primary = config.primary_action || defaultConfig.primary_action;
+        const secondary = config.secondary_action || defaultConfig.secondary_action;
+        const font = config.font_family || defaultConfig.font_family;
+        const size = config.font_size || defaultConfig.font_size;
+
+        // 1. 全域背景與文字
+        const wrapper = document.getElementById('app-wrapper');
+        if (wrapper) {
+            wrapper.style.backgroundColor = bg;
+            wrapper.style.fontFamily = `${font}, sans-serif`;
+            wrapper.style.fontSize = `${size}px`;
+        }
+
+        // 2. 主視覺姓名與職稱
+        const hName = document.getElementById('hero-name');
+        if (hName) {
+            hName.textContent = config.hero_name || defaultConfig.hero_name;
+            hName.style.color = text;
+        }
+        const hTitle = document.getElementById('hero-title');
+        if (hTitle) {
+            hTitle.textContent = config.hero_title || defaultConfig.hero_title;
+            hTitle.style.color = secondary;
+        }
+
+        // 3. 動作按鈕同步更新
+        const btn = document.getElementById('contact-btn');
+        if (btn) {
+            btn.textContent = config.contact_cta || defaultConfig.contact_cta;
+            btn.style.backgroundColor = primary;
+            btn.style.color = bg;
+        }
+        const navContact = document.getElementById('nav-contact-btn');
+        if (navContact) {
+            navContact.style.backgroundColor = primary;
+            navContact.style.color = bg;
+        }
+
+        // 4. 導覽列與各區塊主色調同步
+        const navBrand = document.getElementById('nav-brand');
+        if (navBrand) {
+            navBrand.style.color = primary;
+        }
+
+        // 5. Lucide / 標籤 / 分割線動態刷新顏色
+        document.querySelectorAll('h2').forEach(el => el.style.color = text);
+        document.querySelectorAll('.tag').forEach(el => {
+            el.style.color = primary;
+            el.style.borderColor = primary + '33';
+            el.style.background = primary + '14';
+        });
+        
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+            document.querySelectorAll('[data-lucide]').forEach(el => el.style.color = primary);
+        }
+        
+        document.querySelectorAll('.glow-card').forEach(el => {
+            el.style.borderColor = primary + '1a';
+        });
+        document.querySelectorAll('.section-divider').forEach(el => {
+            el.style.background = `linear-gradient(90deg, transparent, ${primary}4d, transparent)`;
+        });
+
+        // 6. GIS 網格地圖主線條顏色與管線模擬器連接導線
+        const southPoly = document.getElementById('map-poly-south');
+        if (southPoly) {
+            southPoly.style.borderColor = primary;
+        }
+        const northPoly = document.getElementById('map-poly-north');
+        if (northPoly) {
+            northPoly.style.borderColor = secondary;
+        }
+
+        // 7. 更新音源播放器顏色
+        const bgmPulse = document.getElementById('bgm-pulse');
+        if (bgmPulse) bgmPulse.style.backgroundColor = primary + '33';
+        const bgmToggle = document.getElementById('bgm-toggle');
+        if (bgmToggle) bgmToggle.style.borderColor = primary + '33';
+
+        // 8. 重繪導線
+        drawLines();
+        
+        // 9. 更新 Lucide 圖標
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+            lucide.createIcons();
+        }
+    }
+
+    // 初次載入即套用預設設定，避免網絡波動及延遲
+    applyConfig(defaultConfig);
+
+    // 加入防禦性判斷，防止 elementSdk 載入失敗或不存在時拋出 init TypeError 異常
+    if (window.elementSdk && typeof window.elementSdk.init === 'function') {
+        window.elementSdk.init({
+            defaultConfig,
+            onConfigChange: async (config) => {
+                applyConfig(config);
+            },
+            mapToCapabilities: (config) => ({
+                recolorables: [
+                    { get: () => config.background_color || defaultConfig.background_color, set: (v) => { config.background_color = v; window.elementSdk.setConfig({ background_color: v }); } },
+                    { get: () => config.surface_color || defaultConfig.surface_color, set: (v) => { config.surface_color = v; window.elementSdk.setConfig({ surface_color: v }); } },
+                    { get: () => config.text_color || defaultConfig.text_color, set: (v) => { config.text_color = v; window.elementSdk.setConfig({ text_color: v }); } },
+                    { get: () => config.primary_action || defaultConfig.primary_action, set: (v) => { config.primary_action = v; window.elementSdk.setConfig({ primary_action: v }); } },
+                    { get: () => config.secondary_action || defaultConfig.secondary_action, set: (v) => { config.secondary_action = v; window.elementSdk.setConfig({ secondary_action: v }); } }
+                ],
+                borderables: [],
+                fontEditable: { get: () => config.font_family || defaultConfig.font_family, set: (v) => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); } },
+                fontSizeable: { get: () => config.font_size || defaultConfig.font_size, set: (v) => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); } }
+            }),
+            mapToEditPanelValues: (config) => new Map([
+                ['hero_name', config.hero_name || defaultConfig.hero_name],
+                ['hero_title', config.hero_title || defaultConfig.hero_title],
+                ['contact_cta', config.contact_cta || defaultConfig.contact_cta]
+            ])
+        });
+    } else {
+        console.warn("Element SDK 未加載或不在編輯器環境內，已進入獨立模式運作。");
+    }
+
+    // 11. 載入初始化
+    window.addEventListener('load', () => {
+        drawLines();
+        inspectGisSite('south');
+    });
+
+    window.addEventListener('resize', () => {
+        drawLines();
+    });
+  </script>
+</body>
+</html>
