@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蕭任珽 Hsiao Jan-Ting | Data Engineer with Spatial Insight</title>
+    <meta name="description" content="蕭任珽 Hsiao Jan-Ting，具備空間數據處理背景的資料工程師。專注於 Data Pipeline、ETL 開發、GCP 雲端部署與商業邏輯分析。">
+    <meta name="keywords" content="Data Engineer, 資料工程師, Spatial Data, ETL, Python, GCP, GenAI, 蕭任珽, Hsiao Jan-Ting">
+    <meta name="author" content="蕭任珽 Hsiao Jan-Ting">
+    
+    <!-- AEO / GEO Optimization: 結構化資料 (JSON-LD) 讓 AI 搜尋引擎更容易理解頁面內容 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Person",
+      "name": "蕭任珽",
+      "alternateName": "Hsiao Jan-Ting",
+      "jobTitle": "Data Engineer with Spatial Insight",
+      "image": "https://a9243227.github.io/img/Gemini_Generated_Image_e743h2e743h2e743.png",
+      "email": "mailto:martinhsiao92102@gmail.com",
+      "telephone": "+886-979-637-586",
+      "description": "具備空間數據處理背景，專注於底層架構與商業邏輯的資料工程師。擅長 Data Pipeline 建設、ETL 開發，並具備優異的跨團隊溝通與商業痛點定義能力。",
+      "knowsAbout": ["Data Engineering", "Spatial Data", "ETL", "Python", "GCP", "GenAI", "Data Visualization"]
+    }
+    </script>
+
+    <!-- Tailwind CSS (CDN for RWD) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1e3a8a', // Blue-900
+                        secondary: '#3b82f6', // Blue-500
+                        dark: '#0f172a',
+                        light: '#f8fafc',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color: #1e293b; }
+        .hero-pattern { background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 20px 20px; }
+    </style>
+</head>
+<body class="antialiased text-slate-800 selection:bg-secondary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="font-bold text-xl tracking-wider text-primary">H.J.T</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">身分背景</a>
+                        <a href="#contributions" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">職責貢獻</a>
+                        <a href="#skills" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">專業技能</a>
+                        <a href="#contact" class="bg-primary text-white hover:bg-secondary px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-md">聯絡我</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden hero-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center md:text-left flex flex-col md:flex-row-reverse items-center justify-between gap-12">
+                
+                <!-- Profile Image -->
+                <div class="w-48 h-48 md:w-72 md:h-72 lg:w-96 lg:h-96 shrink-0 relative group">
+                    <div class="absolute inset-0 bg-secondary rounded-full transform -rotate-6 scale-105 group-hover:rotate-0 transition-transform duration-500 opacity-20"></div>
+                    <img src="https://a9243227.github.io/img/Gemini_Generated_Image_e743h2e743h2e743.png" alt="蕭任珽 Hsiao Jan-Ting Profile Picture" class="w-full h-full object-cover rounded-full shadow-2xl relative z-10 border-4 border-white object-top">
+                </div>
+
+                <!-- Intro Text -->
+                <div class="max-w-3xl">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-secondary text-sm font-semibold mb-6">
+                        <i class="fa-solid fa-rocket"></i> Data Engineer
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-dark mb-4 leading-tight">
+                        蕭任珽 <br>
+                        <span class="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-500 mt-2 block">(Hsiao Jan-Ting)</span>
+                    </h1>
+                    <h2 class="text-xl md:text-2xl font-medium text-primary mb-6">
+                        Data Engineer with Spatial Insight
+                    </h2>
+                    <blockquote class="border-l-4 border-secondary pl-4 italic text-slate-600 mb-8 text-lg">
+                        「不只是地圖的製圖員，而是專注於底層架構與商業邏輯的資料旅人。」
+                    </blockquote>
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                        <a href="mailto:martinhsiao92102@gmail.com" class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-secondary hover:-translate-y-1 transition-all shadow-lg">
+                            <i class="fa-solid fa-envelope"></i> 發送 Email
+                        </a>
+                        <a href="tel:0979637586" class="inline-flex items-center gap-2 bg-white text-slate-700 border border-slate-300 px-6 py-3 rounded-lg font-medium hover:bg-slate-50 hover:-translate-y-1 transition-all shadow-sm">
+                            <i class="fa-solid fa-phone"></i> 0979-637-586
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-dark mb-4">身分背景</h2>
+                <div class="w-16 h-1 bg-secondary mx-auto rounded"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto text-lg text-slate-600 leading-relaxed space-y-6">
+                <p>
+                    我具備<strong>空間數據處理（Spatial Data）</strong>背景，因不滿足於僅擔任地理資訊 App 的終端使用者，選擇轉職深耕資料工程領域。我擅長將過往的空間數據視覺化優勢，與紮實的 <strong>Data Pipeline（資料管線）</strong> 建設、<strong>ETL</strong> 開發相結合。
+                </p>
+                <p>
+                    我定位自己為一位<strong>「問題導向」</strong>的資料夥伴。在技術團隊中，我常扮演核心的溝通橋樑，擅長從發散的技術解法中，反向推導並精準定義出核心的<strong>商業痛點與使用者需求（User-Centric）</strong>，確保數據專案能真正落地並創造市場價值。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contributions Section -->
+    <section id="contributions" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-dark mb-4">職責貢獻</h2>
+                <p class="text-slate-500">在近期主導的綠電數據管線專案中，展現從「痛點定義」到「技術選型」的全方位實踐：</p>
+                <div class="w-16 h-1 bg-secondary mx-auto rounded mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition-shadow group">
+                    <div class="w-12 h-12 bg-blue-100 text-secondary rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">產品重新定位 (Pivot)</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        將發散的技術指標，重新對齊「投資人、公民團體與一般大眾」的市場需求。把複雜的國家能源憑證中心數據，收斂為以<strong>「提升 Data 可讀性」</strong>為核心的 MVP（最小可行性產品）目標。
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition-shadow group">
+                    <div class="w-12 h-12 bg-blue-100 text-secondary rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">架構與痛點轉化</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        成功引導團隊將雜亂的原始資料，轉化為三大核心價值：<strong>增加數據可讀性</strong>（商業儀表板）、<strong>建立市場信任</strong>（降低資訊不對稱）、以及<strong>建構可信賴的綠電查詢平台</strong>。
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition-shadow group">
+                    <div class="w-12 h-12 bg-blue-100 text-secondary rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">兼顧現實的技術選型</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        在面對地端硬體限制與開發成本時，展現思慮周全的決策力。不盲目追求大型參數模型，推動部署<strong>適合行動裝置與筆電的輕量化模型（如 Gemma 4 B4E）</strong>，確保開發節奏一致。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-dark mb-4">專業技能</h2>
+                <p class="text-slate-500">根據開發成本與直觀性選擇最適工具，不為技術而技術</p>
+                <div class="w-16 h-1 bg-secondary mx-auto rounded mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Skill Category 1 -->
+                <div class="p-6 border border-slate-200 rounded-xl hover:border-secondary transition-colors">
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-database w-6"></i> Data Engineering & ETL
+                    </h3>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                            <span><strong>Python 批次處理</strong>與 <strong>Selenium</strong> 動態網頁爬蟲。</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                            <span>精準針對雜亂文本與政府公開數據進行<strong>結構化字串拆解</strong>（自動化拆分售電業者、售電量、供電方式等核心欄位）。</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Skill Category 2 -->
+                <div class="p-6 border border-slate-200 rounded-xl hover:border-secondary transition-colors">
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2">
+                        <i class="fa-brands fa-google w-6"></i> Cloud & GenAI
+                    </h3>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                            <span><strong>GCP (Google Cloud Platform)</strong> 雲端部署環境規劃。</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                            <span><strong>LLM 輕量化模型選型</strong>與文本拆解測試（熟悉 <strong>Gemma 4 B4E</strong> 應用）。</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Skill Category 3 -->
+                <div class="p-6 border border-slate-200 rounded-xl hover:border-secondary transition-colors">
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-chart-pie w-6"></i> Data Visualization
+                    </h3>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                            <span><strong>商業儀表板（Dashboard）</strong>設計與開發。</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                            <span><strong>空間數據分析 (Spatial Insight)</strong>：擅長將複雜公共數據，轉化為一目了然的供需流向圖表與市場洞察。</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Skill Category 4 -->
+                <div class="p-6 border border-slate-200 rounded-xl hover:border-secondary transition-colors">
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-users w-6"></i> Soft Skills
+                    </h3>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                            <span><strong>問題導向思維 (Problem Definition)</strong>，直擊核心商業需求。</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                            <span>思慮周全的架構評估、高效的團隊協作與<strong>跨領域引導溝通能力</strong>。</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Vision -->
+    <section id="contact" class="py-24 bg-primary text-white relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-blue-800 opacity-50 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-blue-700 opacity-50 blur-3xl"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">🎯 職涯願景</h2>
+            <p class="text-xl text-blue-100 mb-10 leading-relaxed font-light">
+                我目前正在尋找加入優秀 Data Team 的機會。<br class="hidden md:block">
+                期待能帶著我對數據的敏銳度與空間視野，與團隊共同激盪，<br class="hidden md:block">
+                攜手開發出更具市場影響力、更能解決真實痛點的優質資料解決方案！
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="mailto:martinhsiao92102@gmail.com" class="bg-white text-primary font-bold py-4 px-8 rounded-full shadow-lg hover:bg-slate-100 hover:scale-105 transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-envelope text-xl"></i> martinhsiao92102@gmail.com
+                </a>
+                <a href="tel:0979637586" class="bg-transparent border-2 border-white text-white font-bold py-4 px-8 rounded-full hover:bg-white hover:text-primary hover:scale-105 transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone text-xl"></i> 0979-637-586
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-slate-400 py-8 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>© 2026 蕭任珽 Hsiao Jan-Ting. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
