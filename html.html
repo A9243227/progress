@@ -128,14 +128,14 @@
             
             <div class="max-w-4xl mx-auto text-lg text-slate-600 leading-relaxed space-y-6">
                 <p>
-                    具備空間資料處理能力的資料工程師。面對傳統 GIS 轉型為數據驅動 GeoAI 應用的趨勢，致力於成為串接<strong>「地理空間思維」</strong>與<strong>「技術落地」</strong>的橋樑。
+                    資料工程師，從地理資訊系統的第一線工作出發，踏入資料工程領域。曾在研究案裡面對六年份格式不一的外業調查資料，只能在 Excel 裡一格一格尋找取代、手動清洗成結構化資料——那段經驗讓我確信，好的資料架構與自動化流程，能讓「處理資料」這件事從勞力密集變成有效率的工程實踐，這也是我轉向資料工程的起點。
                 </p>
                 <p>
-                    在面對複雜的技術挑戰時，秉持<strong>「人快心慢」</strong>的行事哲學：在程式撰寫與行動上保持高效俐落，但在系統架構設計上，刻意退一步進行全局思考。
+                    面對複雜的技術挑戰時，秉持<strong>「人快心慢」</strong>的行事哲學：在程式撰寫與執行上保持高效俐落，但在系統架構設計上，刻意退一步進行全局思考。
                 </p>
                 <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-secondary mt-8 shadow-sm">
                     <p class="text-slate-700 m-0">
-                        深信具備開發經驗不代表能看透所有底層邏輯，因此習慣先靜下心來傾聽各方需求，在紛亂的資訊中看見事情的全貌。擅長審視主題、直擊商業邏輯痛點，並在硬體算力、開發成本與業務需求之間，快速找到最適合現階段部署的架構平衡點。
+                        專注於 ETL 流程優化、資料管道建置與工作流自動化（Airflow），並具備 GCP 雲端部署經驗。習慣先靜下心來釐清資料從哪裡來、要到哪裡去，在紛亂的來源與格式中設計出穩定、可維護的資料流程。
                     </p>
                 </div>
             </div>
@@ -156,15 +156,15 @@
                 <!-- Project 1 -->
                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md hover:border-secondary transition-all group">
                     <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 bg-blue-100 text-secondary rounded-xl flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-network-wired"></i>
+                        <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-bolt"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-dark">智慧製造設備異常預警與自動化報表系統</h3>
+                        <h3 class="text-xl font-bold text-dark">綠能交易資訊透明化平台</h3>
                     </div>
                     <ul class="text-slate-600 leading-relaxed space-y-2 list-disc list-inside">
-                        <li><strong>異質系統無縫編排：</strong>以 <strong>n8n</strong> 為核心，整合 PostgreSQL、Google Gemini AI、Discord 及 SMTP 服務。</li>
-                        <li><strong>嵌入式 GenAI 分析：</strong>將 AI 直接嵌入自動化流程。偵測異常時，即時請求 AI 進行根因分析並提供建議。</li>
-                        <li><strong>智慧動態報表：</strong>透過 IF Node 區分熱數據與存檔冷數據；結合 SQL 聚合查詢與 JS，實現全自動 HTML 每日報表。</li>
+                        <li><strong>系統架構主導：</strong>擔任 5 人團隊 Team Leader，主導系統架構設計、workflow diagram 繪製與技術選型決策，整合 3 個資料源共約 6 萬筆政府公開資料。</li>
+                        <li><strong>模組化 DAG 重構：</strong>主導將 monolithic DAG 拆分為 8 條獨立模組，導入 Airflow 3 Asset/Dataset AND-logic 觸發下游 BigQuery 轉換，限縮單一來源異動時的影響範圍。</li>
+                        <li><strong>雲端部署與容錯：</strong>評估成本與擴展性後採用 Cloud Run Job + BigQuery 架構，將爬蟲容器化部署至 GCR；並設計 Selenium 容錯重試機制，避免空值污染資料。</li>
                     </ul>
                 </div>
 
@@ -229,29 +229,37 @@
                 
                 <!-- Exp 1 -->
                 <div class="relative timeline-dot">
-                    <div class="mb-1 text-sm font-bold text-secondary">2026/04 - 仍在職</div>
-                    <h3 class="text-xl font-bold text-dark">空間資料助理工程師</h3>
-                    <div class="text-slate-500 font-medium mb-3">景澤創意有限公司</div>
-                    <p class="text-slate-600">透過調用 Global Building Atlas 空間數據庫，針對鳥類撞擊事件進行比對與研究可行性論證；參與 ESG 生態保育相關之專題計畫編修與設計。</p>
+                    <div class="mb-1 text-sm font-bold text-secondary">2026/04 - 2026/07</div>
+                    <h3 class="text-xl font-bold text-dark">緯育資料工程師班第九期</h3>
+                    <div class="text-slate-500 font-medium mb-3">資料工程師職前訓練</div>
+                    <p class="text-slate-600">擔任「綠能交易資訊透明化平台」頂石專案 Team Leader，主導資料流程規劃與系統架構設計，並將 monolithic DAG 拆分為模組化 DAG 部署至 GCP；同時設計 dagteam 共用群組與 POSIX ACL 權限機制，支援團隊多人透過 SSH 協作開發。</p>
                 </div>
 
                 <!-- Exp 2 -->
                 <div class="relative timeline-dot">
                     <div class="mb-1 text-sm font-bold text-secondary">2025/09 - 2026/01</div>
-                    <h3 class="text-xl font-bold text-dark">AI 應用開發培訓助教</h3>
-                    <div class="text-slate-500 font-medium mb-3">財團法人工業技術研究院 (ITRI)</div>
-                    <p class="text-slate-600">協助教授全端開發 (Python, Flask, React)、機器學習 (CNN, RNN, TensorFlow) 與影像處理 (OpenCV)。並指導學員整合 API 與 Azure 認知服務開發 Line Bot 智能客服與網頁爬蟲。</p>
+                    <h3 class="text-xl font-bold text-dark">空間資料助理工程師</h3>
+                    <div class="text-slate-500 font-medium mb-3">景澤創意有限公司</div>
+                    <p class="text-slate-600">透過調用 Global Building Atlas 空間數據庫，針對鳥類撞擊事件進行比對；並針對鳥類撞擊事件進行研究可行性論證，參與相關專題計畫與設計之編修。</p>
                 </div>
 
                 <!-- Exp 3 -->
                 <div class="relative timeline-dot">
-                    <div class="mb-1 text-sm font-bold text-secondary">2025/03 - 2025/06</div>
-                    <h3 class="text-xl font-bold text-dark">GeoAI 暑期實習生</h3>
-                    <div class="text-slate-500 font-medium mb-3">互動國際數位股份有限公司</div>
-                    <p class="text-slate-600">參與都市更新、防災模擬等跨領域實務。熟悉 ArcGIS Online 平台整合；實作 GeoAI 資料標註、模型訓練部署與物件偵測；運用 Python 與 No-code 工具進行流程自動化。</p>
+                    <div class="mb-1 text-sm font-bold text-secondary">2025/04 - 2025/06</div>
+                    <h3 class="text-xl font-bold text-dark">AI 與大數據應用實戰養成開發班</h3>
+                    <div class="text-slate-500 font-medium mb-3">財團法人工業技術研究院 (ITRI)</div>
+                    <p class="text-slate-600">以學員身分完成全端開發、機器學習 (CNN, RNN, TensorFlow) 與影像處理 (OpenCV) 訓練；實作 Line Bot 智能客服、串接 Azure 認知服務，並以 Selenium、BeautifulSoup 進行網頁爬蟲與 Linux/Shell Script 操作練習。</p>
                 </div>
 
                 <!-- Exp 4 -->
+                <div class="relative timeline-dot">
+                    <div class="mb-1 text-sm font-bold text-secondary">2024/07 - 2024/08</div>
+                    <h3 class="text-xl font-bold text-dark">暑期培訓</h3>
+                    <div class="text-slate-500 font-medium mb-3">互動國際數位股份有限公司</div>
+                    <p class="text-slate-600">參與都市更新、防災模擬等跨領域實務案例。熟悉 ArcGIS Online 平台整合；實作 GeoAI 資料標註、模型訓練部署與物件偵測；運用 Python 與 No-code 工具進行流程自動化。</p>
+                </div>
+
+                <!-- Exp 5 -->
                 <div class="relative timeline-dot">
                     <div class="mb-1 text-sm font-bold text-secondary">2022/07 - 2023/08</div>
                     <h3 class="text-xl font-bold text-dark">空間資訊專案助理</h3>
@@ -377,10 +385,10 @@
             
             <div class="text-lg md:text-xl text-blue-50 mb-10 leading-relaxed font-light space-y-6 text-left md:text-center">
                 <p>
-                    未來，期許能將<strong>「GIS + AI」</strong>的跨領域優勢，結合 n8n 自動化部署與 Cloud 應用能力，投入到智慧物流、環境監測或都市規劃等高度依賴空間數據的領域中。
+                    未來，我希望持續深耕 ETL 資料管線與工作流自動化，並逐步朝 DevOps 方向發展，期望加入資訊顧問或資訊科技產業，成為團隊中能扛起資料架構與自動化任務的工程師。
                 </p>
                 <p>
-                    將持續發揮跨界整合的特長，為企業在空間數據應用與自動化轉型上，提供穩定且高效率的即戰力。
+                    地理資訊系統的背景，是我在空間資料處理與跨領域溝通上的優勢——但接下來，我想把資料工程的地基打得更扎實，持續累積雲端部署、排程監控與系統設計的實戰經驗。
                 </p>
             </div>
             
